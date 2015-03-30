@@ -8,3 +8,5 @@ The photo urls collector for [photo AC](http://www.photo-ac.com/ "写真AC") wri
 # How to use
     pip install beautifulsoup4 html5lib
     python3.4 photoac-dl.py keyword > urls.txt
+    # If you use command-line downloader such as wget, cookie must be set.
+    # In my case, I download them using Chrono Download Manager on Google Chrome.
