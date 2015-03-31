@@ -1,6 +1,8 @@
 # photoac-dl
 The photo urls collector for [photo AC](http://www.photo-ac.com/ "写真AC") written by Python.
 
+写真素材を提供する写真ACから特定のキーワードの写真のダウンロードURLを収集するスクリプトです．  
+
 # Requirements
 * Beautiful Soup 4
 * html5lib (optional: If it don't be installed, you must edit photoac-dl.py before using.)
