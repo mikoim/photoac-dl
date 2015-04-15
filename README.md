@@ -1,5 +1,5 @@
 # photoac-dl
-The photo urls collector for [photo AC](http://www.photo-ac.com/ "写真AC") written by Python.
+The photo urls collector for [photo AC](http://www.photo-ac.com/ "写真AC") written in Python.
 
 写真素材を提供する写真ACから特定のキーワードの写真のダウンロードURLを収集するスクリプトです．  
 
