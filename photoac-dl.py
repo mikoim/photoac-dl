@@ -7,6 +7,7 @@ import urllib.parse
 import math
 import sys
 import argparse
+import importlib
 
 from bs4 import BeautifulSoup
 
@@ -14,6 +15,8 @@ from bs4 import BeautifulSoup
 base_url = 'http://www.photo-ac.com'
 regex = re.compile('/main/detail_pop/\?p_id=(\d+)&f=(.+?)&.+')
 
+def get_best_parser():
+    return list(filter(lambda x: importlib.find_loader(x), ['lxml', 'html5lib', 'html.parser']))[0]
 
 def main():
     page = 1
@@ -36,7 +39,7 @@ def main():
         request.add_header('User-Agent', 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)')
         response = urllib.request.urlopen(request)
 
-        soup = BeautifulSoup(response.read().decode(encoding='utf-8'), "html5lib")
+        soup = BeautifulSoup(response.read().decode(encoding='utf-8'), get_best_parser())
         urls = [tag_a.get('href') for tag_a in soup.find_all('a', attrs={'class': 'thickbox'})]
 
         for url in [url for url in list(map(convert, urls)) if url]:
